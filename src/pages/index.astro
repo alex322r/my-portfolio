@@ -5,9 +5,85 @@ import NavBar from "../components/NavBar.astro";
 
 <Layout title="Alex's Portfolio.">
 	<!-- my portfolio -->
+	<div id="glare"></div>
+	<div id="text"></div>
+	<div id="interlaced"></div>
 	<NavBar />
-	<main>
-		<h1 class="text-4xl text-center py-5">My Portfolio</h1>
-		<p></p>
-	</main>
+	<main></main>
+
+	<div class="wave-wrapper">
+		<div class="wave"></div>
+	</div>
 </Layout>
+
+<style>
+	@keyframes wave {
+		0% {
+			box-shadow: 0 -10vh 20vh #00cc004f;
+			top: -100vh;
+		}
+		48%,
+		52% {
+			box-shadow: 0 -10vh 20vh #00990045;
+		}
+		50% {
+			box-shadow: 0 -10vh 20vh #0066004d;
+		}
+		100% {
+			box-shadow: 0 -10vh 20vh #00cc003c;
+			top: 200vh;
+		}
+	}
+
+	.wave {
+		animation: wave 10s infinite ease-in-out;
+		content: "";
+		height: 10vh;
+		left: 0;
+		opacity: 0.5;
+		position: absolute;
+		right: 0;
+		z-index: 1;
+	}
+
+	.wave-wrapper {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+
+		overflow: hidden;
+		z-index: -1;
+	}
+	#glare {
+		position: fixed;
+		inset: 0;
+		z-index: -1;
+		background: radial-gradient(
+			hsl(154 5% 15%) 0%,
+			hsl(154deg 35.34% 12.9%) 70%
+		);
+	}
+
+	#text {
+		background: repeating-linear-gradient(
+			transparent 0px 3px,
+			hsl(154 0% 0%/0) 3px 4px
+		);
+		z-index: 1;
+		position: fixed;
+		inset: 0;
+		pointer-events: none;
+	}
+	#interlaced {
+		position: fixed;
+		background: repeating-linear-gradient(
+			transparent 0px 1px,
+			hsl(154 0% 0%/0.2) 3px 4px
+		);
+		inset: 0;
+		z-index: 1;
+		pointer-events: none;
+	}
+</style>
