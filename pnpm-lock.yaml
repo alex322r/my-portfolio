@@ -8,6 +8,9 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.0.2
     version: 5.0.2(astro@3.3.2)(tailwindcss@3.3.3)
+  '@fontsource/twinkle-star':
+    specifier: ^5.0.17
+    version: 5.0.17
   astro:
     specifier: ^3.3.2
     version: 3.3.2
@@ -721,6 +724,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource/twinkle-star@5.0.17:
+    resolution: {integrity: sha512-Y8geTc67IQ0YXrSLqAqFoyT8bCx3CaY/0FaWAOXEBEpq2hgkuti5DtpHo8v2kIjGTTNcbsP9zbVHARL4cGlrJA==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}

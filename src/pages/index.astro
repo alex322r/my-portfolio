@@ -28,12 +28,37 @@ import Footer from "../components/Footer.astro";
 		   <pre class="font-mono text-green-100"> ver. 2023</pre>
 	   </pre>
 		</div>
+		<div class="sm:top-20 pt-4">
+			<p id="message"></p>
+			<p></p>
+		</div>
 	</main>
 	<Footer />
 	<div class="wave-wrapper">
 		<div class="wave"></div>
 	</div>
 </Layout>
+
+<script>
+	let initialText = "";
+	const message =
+		"Hello, I'm Alexis Rodriguez. I'm a software developer and a designer. I'm currently working on a new portfolio. Stay tuned!";
+
+	const writeMessage = () => {
+		if (initialText.length < message.length) {
+			initialText += message.charAt(initialText.length);
+			let text = document.getElementById(
+				"message",
+			) as HTMLParagraphElement;
+			text.innerHTML = initialText;
+			setTimeout(writeMessage, 50);
+		}
+	};
+
+	window.onload = () => {
+		writeMessage();
+	};
+</script>
 
 <style>
 	@keyframes wave {
