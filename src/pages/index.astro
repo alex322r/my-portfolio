@@ -29,8 +29,7 @@ import Footer from "../components/Footer.astro";
 	   </pre>
 		</div>
 		<div class="sm:top-20 pt-4">
-			<p id="message"></p>
-			<p></p>
+			<p class="text-xl" id="message"></p>
 		</div>
 	</main>
 	<Footer />
@@ -55,9 +54,7 @@ import Footer from "../components/Footer.astro";
 		}
 	};
 
-	window.onload = () => {
-		writeMessage();
-	};
+	window.addEventListener("load", writeMessage);
 </script>
 
 <style>
